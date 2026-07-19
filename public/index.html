@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover Song Writer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <h1>Cover Song Writer</h1>
+    <button id="new-song-btn" class="btn btn-primary">+ New Song</button>
+    <ul id="song-list" class="song-list"></ul>
+  </aside>
+
+  <main class="main">
+    <section id="new-song-form" class="panel hidden">
+      <h2>New Parody</h2>
+      <label class="field">
+        <span>Song title</span>
+        <input type="text" id="new-title" placeholder="e.g. Bohemian Rhapsody">
+      </label>
+      <label class="field">
+        <span>Original artist</span>
+        <input type="text" id="new-artist" placeholder="e.g. Queen">
+      </label>
+      <label class="field">
+        <span>Original lyrics (one line per row)</span>
+        <textarea id="new-lyrics" rows="14" placeholder="Paste the original lyrics here, line by line..."></textarea>
+      </label>
+      <div class="form-actions">
+        <button id="create-song-btn" class="btn btn-primary">Create</button>
+        <button id="cancel-new-song-btn" class="btn">Cancel</button>
+      </div>
+      <p id="new-song-error" class="error hidden"></p>
+    </section>
+
+    <section id="editor" class="panel hidden">
+      <div class="editor-header">
+        <div class="editor-title">
+          <h2 id="song-title"></h2>
+          <span id="song-artist" class="muted"></span>
+        </div>
+        <div class="editor-actions">
+          <span id="save-status" class="save-status">Saved</span>
+          <button id="delete-song-btn" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+
+      <div class="lines-header">
+        <div>Original lyrics</div>
+        <div>Your parody</div>
+      </div>
+      <div class="lines-container">
+        <div class="lines-grid" id="lines-grid"></div>
+      </div>
+    </section>
+
+    <div id="empty-state" class="empty-state">
+      <p>Select a song from the list, or create a new one to get started.</p>
+    </div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
