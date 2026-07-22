@@ -45,17 +45,17 @@
     "And we found love right where we are"
   ],
   "parodyLines": [
-    "When your code doesn't run like it used to before",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "When my code doesn't run like it used to before",
+    "And I hadn't heard of a test suite",
+    "There's a chance I'll regret all those rushed design choices",
+    "These are tears running down on my cheeks",
+    "Oh man I will be debugging this 'til I'm 70",
+    "It's been a whole week and I only got to line 23",
+    "And I'm thinking 'bout how people write and code in mysterious ways",
+    "Maybe just a prompt of AI",
+    "Oh me I write and code every hour of the day",
+    "And I just wanna see it compile",
+    "So hurry now",
     "",
     "",
     "",
@@ -87,5 +87,5 @@
     ""
   ],
   "createdAt": "2026-07-21T08:23:48.331Z",
-  "updatedAt": "2026-07-21T08:26:15.563Z"
+  "updatedAt": "2026-07-22T06:15:30.139Z"
 }
