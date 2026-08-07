@@ -187,6 +187,82 @@ body {
 .save-status.saving { color: var(--accent); }
 .save-status.error { color: var(--danger); }
 
+.parody-header {
+  margin: 12px 0 16px 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+}
+
+.parody-title-section,
+.parody-artist-section {
+  margin-bottom: 8px;
+}
+
+.parody-title-section:last-child,
+.parody-artist-section:last-child {
+  margin-bottom: 0;
+}
+
+.parody-title-display,
+.parody-artist-display {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 4px;
+  transition: background-color 0.2s;
+}
+
+.parody-title-display:hover,
+.parody-artist-display:hover {
+  background-color: var(--accent-soft);
+}
+
+.parody-title-text {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.parody-artist-text {
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.parody-title-input,
+.parody-artist-input {
+  font-family: inherit;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 6px 8px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.parody-title-input {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.parody-title-input:focus,
+.parody-artist-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.parody-title-input.hidden,
+.parody-artist-input.hidden,
+.parody-title-display.hidden,
+.parody-artist-display.hidden {
+  display: none;
+}
+
 .lines-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -256,6 +332,57 @@ body {
 
 .line-row.active .parody-line {
   border-color: var(--accent);
+}
+
+.original-line.blank-line,
+.parody-line.blank-line {
+  min-height: 20px;
+  border-bottom: 1px dashed var(--border);
+  opacity: 0.5;
+}
+
+.original-line.blank-line {
+  background: transparent;
+}
+
+.parody-line.blank-line {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.letter-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 4px;
+  font-size: 11px;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.letter-btn {
+  min-width: 20px;
+  padding: 4px 6px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.letter-btn:hover:not(.inactive) {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.letter-btn.inactive {
+  color: var(--muted);
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .empty-state {

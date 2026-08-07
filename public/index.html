@@ -11,6 +11,7 @@
   <aside class="sidebar">
     <h1>Cover Song Writer</h1>
     <button id="new-song-btn" class="btn btn-primary">+ New Song</button>
+    <div id="letter-index" class="letter-index"></div>
     <ul id="song-list" class="song-list"></ul>
   </aside>
 
@@ -27,7 +28,7 @@
       </label>
       <label class="field">
         <span>Original lyrics (one line per row)</span>
-        <textarea id="new-lyrics" rows="14" placeholder="Paste the original lyrics here, line by line..."></textarea>
+        <textarea id="new-lyrics" rows="14" placeholder="Paste the original lyrics here. Blank lines separate verses/chorus."></textarea>
       </label>
       <div class="form-actions">
         <button id="create-song-btn" class="btn btn-primary">Create</button>
@@ -45,6 +46,21 @@
         <div class="editor-actions">
           <span id="save-status" class="save-status">Saved</span>
           <button id="delete-song-btn" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+
+      <div class="parody-header">
+        <div class="parody-title-section">
+          <div id="parody-title-display" class="parody-title-display">
+            <h2 id="parody-title-text" class="parody-title-text"></h2>
+          </div>
+          <input type="text" id="parody-title-input" class="parody-title-input hidden" />
+        </div>
+        <div class="parody-artist-section">
+          <div id="parody-artist-display" class="parody-artist-display">
+            <span id="parody-artist-text" class="parody-artist-text muted"></span>
+          </div>
+          <input type="text" id="parody-artist-input" class="parody-artist-input hidden" />
         </div>
       </div>
 

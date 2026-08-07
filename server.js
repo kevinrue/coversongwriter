@@ -36,7 +36,10 @@ async function ensureSongsDir() {
 
 async function readSong(id) {
   const raw = await fs.readFile(songPath(id), 'utf8');
-  return JSON.parse(raw);
+  const song = JSON.parse(raw);
+  if (song.parodyTitle === undefined) song.parodyTitle = '';
+  if (song.parodyArtist === undefined) song.parodyArtist = '';
+  return song;
 }
 
 async function writeSong(song) {
@@ -104,6 +107,8 @@ app.post('/api/songs', async (req, res) => {
       artist: typeof artist === 'string' ? artist.trim() : '',
       originalLines,
       parodyLines: originalLines.map(() => ''),
+      parodyTitle: '',
+      parodyArtist: '',
       createdAt: now,
       updatedAt: now,
     };
@@ -120,7 +125,7 @@ app.put('/api/songs/:id', async (req, res) => {
   const { id } = req.params;
   if (!isValidId(id)) return res.status(400).json({ error: 'Invalid song id' });
 
-  const { parodyLines, title, artist } = req.body || {};
+  const { parodyLines, title, artist, parodyTitle, parodyArtist } = req.body || {};
 
   try {
     const song = await readSong(id);
@@ -136,6 +141,8 @@ app.put('/api/songs/:id', async (req, res) => {
     }
     if (typeof title === 'string' && title.trim()) song.title = title.trim();
     if (typeof artist === 'string') song.artist = artist.trim();
+    if (typeof parodyTitle === 'string') song.parodyTitle = parodyTitle.trim();
+    if (typeof parodyArtist === 'string') song.parodyArtist = parodyArtist.trim();
 
     song.updatedAt = new Date().toISOString();
     await writeSong(song);

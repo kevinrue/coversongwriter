@@ -1,0 +1,19 @@
+{
+  "id": "bohemian-rhapsody-ce34f8",
+  "title": "Bohemian Rhapsody",
+  "artist": "Queen",
+  "originalLines": [
+    "Is this the real life?",
+    "Is this just fantasy?",
+    "Caught in a landslide"
+  ],
+  "parodyLines": [
+    "Is this the fake life?",
+    "Is this a parody?",
+    "Caught in my playlist"
+  ],
+  "parodyTitle": "Bohemian Absurdity",
+  "parodyArtist": "Kevin",
+  "createdAt": "2026-07-22T06:42:07.968Z",
+  "updatedAt": "2026-07-22T06:42:13.986Z"
+}
